@@ -305,13 +305,13 @@ function set_hide_non_lists(hide) {
 
 function add_css(file) {
   var checkLink = document.querySelector(
-      'link[href="' + chrome.extension.getURL("css/" + file) + '"]'
+      'link[href="' + chrome.runtime.getURL("css/" + file) + '"]'
     ),
     link;
 
   if (checkLink === null) {
     link = document.createElement("link");
-    link.href = chrome.extension.getURL("css/" + file);
+    link.href = chrome.runtime.getURL("css/" + file);
     link.type = "text/css";
     link.rel = "stylesheet";
     link.media = "screen,print";
@@ -321,7 +321,7 @@ function add_css(file) {
 
 function remove_css(file) {
   var link = document.querySelectorAll(
-    'link[href="' + chrome.extension.getURL("css/" + file) + '"]'
+    'link[href="' + chrome.runtime.getURL("css/" + file) + '"]'
   );
 
   if (link.length > 0) {
