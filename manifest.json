@@ -10,16 +10,19 @@
 	"short_name": "DFTube",
 
 	"permissions": [
-		"https://api.mailgun.net/*",
 		"storage",
 		"tabs"
 	],
 
+	"host_permissions": [
+		"https://api.mailgun.net/*"
+	],
+
 	"web_accessible_resources": [
-		"images/*.*",
-		"css/*.*",
-		"scripts/*.js",
-		"content/*.html"
+		{
+			"resources" : ["images/*.*","css/*.*","scripts/*.js","content/*.html"],
+			"matches": ["<all_urls>"]
+		}
 	],
 
 	"icons": {
@@ -29,7 +32,7 @@
 		"128": "images/icon_128.png" },
 
 	"background": {
-		"scripts": ["scripts/background.js"]
+		"service_worker": "scripts/background.js"
 	},
 
 	"content_scripts": [
@@ -40,7 +43,7 @@
 		}
 	],
 
-	"browser_action": {
+	"action": {
 		"default_icon": "images/df_youtube_icon_active_32.png",
 		"default_popup": "home.html"
 	}
