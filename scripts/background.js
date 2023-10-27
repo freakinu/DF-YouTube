@@ -1,4 +1,4 @@
-window.devMode = false;
+var devMode = false;
 var options,
   optionsLoaded = false;
 
@@ -120,7 +120,7 @@ function align_objects(defaultObject, comparisonObject, useTrim) {
   for (prop in defaultObject) {
     if (defaultObject.hasOwnProperty(prop)) {
       if (!comparisonObject.hasOwnProperty(prop)) {
-        if (window.devMode) {
+        if (devMode) {
           console.log("comparee prop " + prop + " not found");
         }
 
