@@ -158,7 +158,8 @@ function broadcast_options(tabID) {
   else {
     chrome.tabs.query({}, function (tabs) {
       for (var i = 0; i < tabs.length; i++) {
-        order_update_view(tabs[i].id);
+        if(/https:\/\/www\.youtube\.com\/.+/.test(tabs[i].url))
+          order_update_view(tabs[i].id);
       }
     });
   }
