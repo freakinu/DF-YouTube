@@ -178,16 +178,16 @@ function save_options() {
 
 function set_icon(icon) {
   if (icon == "active") {
-    chrome.browserAction.setIcon({
-      path: "images/df_youtube_icon_active_32.png",
+    chrome.action.setIcon({
+      path: "../images/df_youtube_icon_active_32.png",
     });
   } else if (icon == "inactive") {
-    chrome.browserAction.setIcon({
-      path: "images/df_youtube_icon_inactive_32.png",
+    chrome.action.setIcon({
+      path: "../images/df_youtube_icon_inactive_32.png",
     });
   } else if (icon == "alert") {
-    chrome.browserAction.setIcon({
-      path: "images/df_youtube_icon_alert_32.png",
+    chrome.action.setIcon({
+      path: "../images/df_youtube_icon_alert_32.png",
     });
   }
 }
